@@ -21,7 +21,7 @@
             android:layout_height="48dp"
             android:ems="10"
             android:hint="Correo electronico..."
-            android:inputType="textPassword" />
+            android:inputType="textEmailAddress" />
 
         <Space
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             android:layout_height="48dp"
             android:ems="10"
             android:hint="Contraseña..."
-            android:inputType="textEmailAddress" />
+            android:inputType="textPassword" />
 
         <Space
             android:layout_width="match_parent"
