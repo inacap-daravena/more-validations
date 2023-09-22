@@ -22,30 +22,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean validarCampos() {
+        boolean esValido = true;
+
         String email = txtEmail.getText().toString();
         String password = txtPassword.getText().toString();
         
         if (password.length() < 7) {
             txtPassword.setError("La contraseña debe ser de un largo mayor a 7 caracteres.");
-            return false;
+            esValido = false;
         }
         
         if (email.length() < 3) {
             txtEmail.setError("El largo del email debe ser mayor a 3 caracteres.");
-            return false;
+            esValido = false;
         }
 
         if (!email.contains("@")) {
             txtEmail.setError("El email no contiene ningun @");
-            return false;
+            esValido = false;
         }
         
-        return true;
+        return esValido;
     }
     
     public void next(View view) {
         if (validarCampos()) {
             Intent i = new Intent(this, ConfirmationActivity.class);
+
+            i.putExtra("Password", txtPassword.getText().toString());
 
             startActivity(i);
         } else {
